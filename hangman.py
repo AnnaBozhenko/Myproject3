@@ -60,8 +60,23 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    secret_word = secret_word.lower()
+    result = 1
+    is_in_both = 1
+    for element in letters_guessed:
+        element = element.lower()
+        for word in secret_word:
+            result = is_in_both
+            if element == word:
+                is_in_both = True
+            else:
+                is_in_both = False
+            result += is_in_both
+    return secret_word, letters_guessed, result
+a = is_word_guessed('word', ['w', 'o', 'r', 'd'])
+print(a)
+    
+
 
 
 
